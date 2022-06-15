@@ -228,9 +228,9 @@ if [ ${use_hwe_kernel} -eq 1 ]; then
 fi
 
 log "🧩 Adding autoinstall parameter to kernel command line..."
-sed -i -e 's/---/ autoinstall  ---/g' "$tmpdir/isolinux/txt.cfg"
-sed -i -e 's/---/ autoinstall  ---/g' "$tmpdir/boot/grub/grub.cfg"
-sed -i -e 's/---/ autoinstall  ---/g' "$tmpdir/boot/grub/loopback.cfg"
+sed -i -e 's/---/ autoinstall toram ---/g' "$tmpdir/isolinux/txt.cfg"
+sed -i -e 's/---/ autoinstall toram ---/g' "$tmpdir/boot/grub/grub.cfg"
+sed -i -e 's/---/ autoinstall toram ---/g' "$tmpdir/boot/grub/loopback.cfg"
 log "👍 Added parameter to UEFI and BIOS kernel command lines."
 
 if [ ${all_in_one} -eq 1 ]; then
